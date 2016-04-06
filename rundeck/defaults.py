@@ -52,6 +52,7 @@ ExecutionOutputFormat = enum(
 
 RUNDECK_API_VERSION = 11
 GET = 'get'
+PUT = 'put'
 POST = 'post'
 DELETE = 'delete'
 JOB_RUN_TIMEOUT = 60

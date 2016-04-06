@@ -28,6 +28,7 @@ from .exceptions import (
 from .defaults import (
     GET,
     POST,
+    PUT,
     DELETE,
     DupeOption,
     UuidOption,
@@ -1074,7 +1075,35 @@ class RundeckApiTolerant(object):
 
         return self._exec(POST, 'project/{0}/resources/refresh'.format(project), data=data, **kwargs)
 
+    def project_archive_import(self, project, archive_zip_data, **kwargs):
+      """Wraps `Rundeck API PUT /api/14/project/[PROJECT]/import <http://rundeck.org/docs/api/index.html#project-archive-import>`_
 
+      :Parameters:
+          project : str
+              name of the project
+          archive_zip_data : ?
+              Zip file containing a project archive.
+
+      :Keywords:
+          jobUuidOption : str ('preserve'|'remove')
+              Option declaring how duplicate Job UUIDs should be handled. If preserve (default) then
+              imported job UUIDs will not be modified, and may conflict with jobs in other projects.
+              If remove then all job UUIDs will be removed before importing.
+          importExecutions : bool
+               import all executions and logs from the archive (default: true)
+          importConfig : bool
+               import project configurationfrom the archive (default: true)
+          importACL : bool
+               import all of the ACL policies from the archive (default: true)
+
+      :return: A :class:`~.rundeck.connection.RundeckResponse`
+      :rtype: :class:`~.rundeck.connection.RundeckResponse`
+      """
+      data = cull_kwargs(('jobUuidOption', 'importExecutions', 'importConfig', 'importACL'), kwargs)
+
+      headers = {'Content-Type': 'application/zip'}
+
+      return self._exec(PUT, 'project/{0}/import'.format(urlquote(project)), params=data, data=archive_zip_data, headers=headers, **kwargs)
 
 
     def history(self, project, **kwargs):
