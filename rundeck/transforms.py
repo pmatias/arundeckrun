@@ -187,11 +187,15 @@ def jobs_delete(resp):
 
 @is_transform
 def project_archive_import(resp):
-  result = resp.etree.find('import')
-  if result is not None:
-    return result.attrib.get('status', None) == 'successful'
-  else:
-    return None
+  import_node = resp.etree.find('import')
+  results = {
+    'succeeded': None,
+    'data': resp.body
+  }
+  if import_node is not None:
+    results['succeeded'] = import_node.attrib.get('status', None) == 'successful'
+
+  return results
 
 @is_transform
 def execution_output(resp):
@@ -284,4 +288,3 @@ def transform(resp_type):
         return wrapper
 
     return inner
-
