@@ -998,6 +998,33 @@ class Rundeck(object):
         else:
             raise InvalidResourceSpecification('No valid nodes provided')
 
+    @transform('project_archive_import')
+    def import_project_archive(self, project_name, archive_zip_data, **kwargs):
+        """Wraps `Rundeck API PUT /api/14/project/[PROJECT]/import <http://rundeck.org/docs/api/index.html#project-archive-import>`_
+
+        :Parameters:
+            project : str
+                name of the project
+            archive_zip_data : ?
+                Zip file containing a project archive.
+
+        :Keywords:
+            jobUuidOption : str ('preserve'|'remove')
+                Option declaring how duplicate Job UUIDs should be handled. If preserve (default) then
+                imported job UUIDs will not be modified, and may conflict with jobs in other projects.
+                If remove then all job UUIDs will be removed before importing.
+            importExecutions : bool
+                 import all executions and logs from the archive (default: true)
+            importConfig : bool
+                 import project configurationfrom the archive (default: true)
+            importACL : bool
+                 import all of the ACL policies from the archive (default: true)
+
+        :return: A :class:`~.rundeck.connection.RundeckResponse`
+        :rtype: :class:`~.rundeck.connection.RundeckResponse`
+        """
+        return self.api.project_archive_import(project_name, archive_zip_data, **kwargs)
+
 
     @transform('success_message')
     def refresh_project_resources(self, project, providerURL=None, **kwargs):
