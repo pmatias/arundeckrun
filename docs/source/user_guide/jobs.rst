@@ -20,15 +20,15 @@ Run a Job
 
 .. code-block:: pycon
 
-    >>> rd.run_job('a6e1e0f7-ad32-4b93-ba2c-9387be06a146', argString={'from': 'RundeckRun'})
-    {'argstring': '-from RundeckRun',
+    >>> rd.run_job('a6e1e0f7-ad32-4b93-ba2c-9387be06a146', argString={'from': 'arundeckrun'})
+    {'argstring': '-from arundeckrun',
      'date-started': datetime.datetime(2013, 7, 11, 18, 4, 24),
      'description': 'Plugin[localexec, nodeStep: true]',
      'href': 'http://rundeck.server.com/execution/follow/123',
      'id': '123',
      'job': None,
      'status': 'running',
-     'user': 'rundeckrun'}
+     'user': 'arundeckrun'}
 
 A Note on argString
 ~~~~~~~~~~~~~~~~~~~
@@ -69,4 +69,4 @@ Export All Jobs
   description: ''
   name: TestJob
   uuid: cb973e3a-e682-4b45-9dbe-9e5301a4361e
-  group: RundeckRun/Tests
+  group: arundeckrun/Tests

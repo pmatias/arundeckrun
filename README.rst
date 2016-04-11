@@ -1,10 +1,10 @@
-RundeckRun
+arundeckrun
 ==========
 
 **READ FIRST**
-    If you're new to RundeckRun and are interacting with newer versions of Rundeck (>=2.1.3),
+    If you're new to arundeckrun and are interacting with newer versions of Rundeck (>=2.1.3),
     you should consider using the `command line tools included with Rundeck
-    <http://rundeck.org/docs/man1/index.html>`_ (since at least Rundeck version 2.0.4). RundeckRun
+    <http://rundeck.org/docs/man1/index.html>`_ (since at least Rundeck version 2.0.4). arundeckrun
     should work well for the Rundeck API up to version 11 (Rundeck <=2.1.3). It currently does not
     support Rundeck API versions greater than 11 for no other reason the project maintainer not
     having enough time to put into making the necessary changes. Pull requests welcome!
@@ -27,7 +27,7 @@ Requires
 
 .. code-block:: bash
 
-    $ pip install rundeckrun
+    $ pip install arundeckrun
 
 
 Use
@@ -49,15 +49,15 @@ Use
       'id': 'a6e1e0f7-ad32-4b93-ba2c-9387be06a146',
       'name': 'HelloWorld',
       'project': 'TestProject'}]
-    >>> rd.run_job('a6e1e0f7-ad32-4b93-ba2c-9387be06a146', argString={'from':'RundeckRun'})
-    {'argstring': '-from RundeckRun',
+    >>> rd.run_job('a6e1e0f7-ad32-4b93-ba2c-9387be06a146', argString={'from':'arundeckrun'})
+    {'argstring': '-from arundeckrun',
      'date-started': datetime.datetime(2013, 7, 11, 18, 4, 24),
      'description': 'Plugin[localexec, nodeStep: true]',
      'href': 'http://rundeck.server.com/execution/follow/123',
      'id': '123',
      'job': None,
      'status': 'running',
-     'user': 'rundeckrun'}
+     'user': 'arundeckrun'}
 
 
 Running Tests
@@ -85,7 +85,7 @@ Next clone the repo.
 
 .. code-block:: bash
 
-    git clone https://github.com/marklap/rundeckrun
+    git clone https://github.com/marklap/arundeckrun
 
 .. note:: activate your `virtualenv <http://www.virtualenv.org/en/latest/>`_
 
@@ -103,4 +103,4 @@ Lastly, execute nose tests.
     nosetests
 
 .. _requests: http://docs.python-requests.org/
-.. _Read the Docs:  http://rundeckrun.readthedocs.org/
+.. _Read the Docs:  http://arundeckrun.readthedocs.org/

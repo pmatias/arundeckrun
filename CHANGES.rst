@@ -1,17 +1,17 @@
 0.2.2
 -----
-- Resolved bug `Issue #30 <https://github.com/marklap/rundeckrun/issues/30>`_ (thank you
+- Resolved bug `Issue #30 <https://github.com/marklap/arundeckrun/issues/30>`_ (thank you
 @mikkyornyx)
 
 0.2.1
 -----
-- Resolved bug `Issue #28 <https://github.com/marklap/rundeckrun/issues/28>`_ with
-  `Pull Request #29 <https://github.com/marklap/rundeckrun/pull/29>`_  (thank you @zyv)
+- Resolved bug `Issue #28 <https://github.com/marklap/arundeckrun/issues/28>`_ with
+  `Pull Request #29 <https://github.com/marklap/arundeckrun/pull/29>`_  (thank you @zyv)
 
 0.2.0
 -----
-- Merged `Pull Request #27 <https://github.com/marklap/rundeckrun/pull/27>`_ (thank you @aodag)
-- Included baseurl per `Issue #26 <https://github.com/marklap/rundeckrun/issues/26>`_ (thank you
+- Merged `Pull Request #27 <https://github.com/marklap/arundeckrun/pull/27>`_ (thank you @aodag)
+- Included baseurl per `Issue #26 <https://github.com/marklap/arundeckrun/issues/26>`_ (thank you
   @DeathRitual)
 
 0.1.15
@@ -20,29 +20,29 @@
 
 0.1.14
 ------
-- Resolved bug `Issue #22 <https://github.com/marklap/rundeckrun/issues/23>`_
+- Resolved bug `Issue #22 <https://github.com/marklap/arundeckrun/issues/23>`_
 
 0.1.13
 ------
-- In response to `Issue #23 <https://github.com/marklap/rundeckrun/issues/23>`_, change license to
+- In response to `Issue #23 <https://github.com/marklap/arundeckrun/issues/23>`_, change license to
   to Apache 2.0. Versions 0.1.12 will maintain the CC license (added a cc-by-sa tag to repo to
   make it easy to find).
 
 0.1.12
 ------
-- In response to `Issue #18 <https://github.com/marklap/rundeckrun/issues/18>`_
+- In response to `Issue #18 <https://github.com/marklap/arundeckrun/issues/18>`_
   (many thanks @bobnelson0), update docs to provide information about
   `Multi-valued <http://rundeck.org/docs/manual/jobs.html#defining-an-option>`_ job options.
 
 0.1.11
 ------
-- Merged `Issue #16 <https://github.com/marklap/rundeckrun/issues/16>`_: Fix typo in isinstance
+- Merged `Issue #16 <https://github.com/marklap/arundeckrun/issues/16>`_: Fix typo in isinstance
   call (many thanks @boosh)
 - Fixed broken test init validation
 
 0.1.10
 ------
-- Fixed `Issue #15 <https://github.com/marklap/rundeckrun/issues/15>`_: job_executions() in api.py
+- Fixed `Issue #15 <https://github.com/marklap/arundeckrun/issues/15>`_: job_executions() in api.py
   should use GET not POST
 
 0.1.9

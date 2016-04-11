@@ -3,7 +3,7 @@
 
 :license: Apache License, Version 2.0
 :author: Mark LaPerriere
-:contact: rundeckrun@mindmind.com
+:contact: otupman@antillion.com
 :copyright: Mark LaPerriere 2015
 
 :requires: bottle

@@ -11,7 +11,7 @@ Installation
 
 .. code-block:: bash
 
-    pip install rundeckrun
+    pip install arundeckrun
 
 
 "Hello World!"
@@ -40,7 +40,7 @@ Interacting with Rundeck
 ------------------------
 
 An instance of the :py:class:`Rundeck <rundeck.client.Rundeck>` class is where you'll spend most
-with RundeckRun. If you want a more *raw* interface to the Rundeck API, check out the
+with arundeckrun. If you want a more *raw* interface to the Rundeck API, check out the
 :py:class:`RundeckApi <rundeck.api.RundeckApi>` class. In this case, you'll definitely want to
 check out the `Rundeck API Reference`_.
 
