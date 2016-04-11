@@ -22,14 +22,19 @@ setup(
     license='http://creativecommons.org/licenses/by-sa/3.0/',
     version=VERSION,
     packages=find_packages(exclude=["tests", "tests.*"]),
+    
     description='A Rundeck API Python client',
     long_description=long_description,
+
     url='https://github.com/antillion/{0}'.format(project),
     author='rundeckrun@mindmind.com',
     author_email='rundeckrun@mindmind.com',
+
     maintainer='otupman@antillion.com',
     maintainer_email='otupman@antillion.com',
+
     install_requires=install_requires,
+
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
@@ -37,7 +42,7 @@ setup(
         'Intended Audience :: System Administrators',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.3',
+        # 'Programming Language :: Python :: 3.3',
         'Topic :: System :: Software Distribution',
         'Topic :: System :: Systems Administration',
         'Topic :: Utilities',

@@ -38,3 +38,4 @@ nosetests.xml
 python/*
 docs/build/doctrees
 !docs/*
+.idea
