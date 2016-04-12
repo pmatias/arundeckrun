@@ -3,3 +3,5 @@ mock
 httmock
 HTTPretty
 sure
+ipython
+responses

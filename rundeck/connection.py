@@ -67,6 +67,15 @@ class RundeckResponse(object):
     @property
     @memoize
     def success(self):
+        """ Determines whether Rundeck executed the API command successfully.
+
+        This is separate as to whether the HTTP call successfully executed.
+
+        This essentially depends on Rundeck including the attribute `success="true"`
+        in the returned XML body.
+
+        :return: bool
+        """
         try:
             return 'success' in self.etree.attrib
         except Exception:
