@@ -1,6 +1,10 @@
 arundeckrun
 ==========
 
+[![codecov.io](https://codecov.io/github/Antillion/rundeckrun/coverage.svg?branch=master)](https://codecov.io/github/Antillion/rundeckrun?branch=master)
+
+[![wercker status](https://app.wercker.com/status/57e663b27aba00b9b7aabe4ea7b8208a/m/master "wercker status")](https://app.wercker.com/project/bykey/57e663b27aba00b9b7aabe4ea7b8208a)
+
 A fork of the client library written in Python to interact with the Rundeck API, the majority of
 which was created by Mark LaPerriere.
 
