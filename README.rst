@@ -1,22 +1,26 @@
 arundeckrun
 ==========
 
-**READ FIRST**
-    If you're new to arundeckrun and are interacting with newer versions of Rundeck (>=2.1.3),
-    you should consider using the `command line tools included with Rundeck
-    <http://rundeck.org/docs/man1/index.html>`_ (since at least Rundeck version 2.0.4). arundeckrun
-    should work well for the Rundeck API up to version 11 (Rundeck <=2.1.3). It currently does not
-    support Rundeck API versions greater than 11 for no other reason the project maintainer not
-    having enough time to put into making the necessary changes. Pull requests welcome!
+A fork of the client library written in Python to interact with the Rundeck API, the majority of
+which was created by Mark LaPerriere.
 
-A client library written in Python to interact with the Rundeck
-API. It uses the awesome `requests`_
-library.
+The fork exists mostly because the environment Antillion use it requires it to be hosted on
+pypi, so updates must be pushed quickly. In addition, the requirement to run tests against a live
+Rundeck is a no-no.
 
-Documentation is hosted on `Read the Docs`_
+Rundeck (API) version compatibility:
 
-*DISCLAIMER:* Test suite is not comprehensive, but most features have been tested and should work.
-Should work on at least Python 2.7 and Python 3.3.
+Some calls are under active use/development, primarily:
+
+ - Job imports: API v1+
+ - Project archive imports: API v14+
+
+All other calls _should_ work correctly as long as they are not deprecated or if Rundeck fail to
+correctly implement backwards compatibility.
+
+Target python version: 2.7
+Should work (but not tested aagainst): 3
+
 
 Installation
 ------------
@@ -64,7 +68,7 @@ Running Tests
 -------------
 
 .. note:: You'll probably want to create a `virtualenv <http://www.virtualenv.org/en/latest/>`_
-    for this.
+for this.
 
 Running the tests requires a running Rundeck server (the Rundeck standalone jar works well) and an
 API token for said Rundeck server.
