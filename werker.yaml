@@ -1,0 +1,15 @@
+box: python:2.7-onbuild
+build:
+  steps:
+    - script:
+        name: Install required libs
+        code: |
+            pip install tox
+            pip install codecov
+    - script:
+        name: Run Tox
+        code: |
+            tox
+    - script:
+        name: Upload codecov results
+        code: codecov --token=$CODECOV
