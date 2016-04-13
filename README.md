@@ -1,5 +1,5 @@
-arundeckrun
-==========
+# arundeckrun
+
 
 [![codecov.io](https://codecov.io/github/Antillion/rundeckrun/coverage.svg?branch=master)](https://codecov.io/github/Antillion/rundeckrun?branch=master)
 
@@ -26,22 +26,11 @@ Target python version: 2.7
 Should work (but not tested aagainst): 3
 
 
-Installation
-------------
+# Installation
 
-Requires
-~~~~~~~~
-* `requests`_
+  pip install arundeckrun
 
-.. code-block:: bash
-
-    $ pip install arundeckrun
-
-
-Use
----
-
-.. code-block:: pycon
+## Use
 
     >>> from rundeck.client import Rundeck
     >>> rd = Rundeck('rundeck.server.com', api_token='SECRET_API_TOKEN')
@@ -68,11 +57,20 @@ Use
      'user': 'arundeckrun'}
 
 
-Running Tests
--------------
+# Tests
 
-.. note:: You'll probably want to create a `virtualenv <http://www.virtualenv.org/en/latest/>`_
-for this.
+## Unit tests
+
+Unit tests are performed via tox. 
+
+To install tox and then run the tests:
+
+    pip install tox
+    tox
+
+## Integration tests
+
+*Note:* currently the integrations are not up-to-date and are not under continous integration. Soon though...
 
 Running the tests requires a running Rundeck server (the Rundeck standalone jar works well) and an
 API token for said Rundeck server.
