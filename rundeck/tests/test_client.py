@@ -27,6 +27,7 @@ sys.path.append(os.getcwd() + '/rundeck')
 from IPython import embed
 from client import Rundeck
 import responses
+from yattag import Doc
 
 from urlparse import urlsplit, parse_qs as parse_querystring
 
@@ -35,10 +36,69 @@ class TestRundeckApi(unittest.TestCase):
   def rundeck_success(self, body, api_version=14):
     return '<result success="true" apiversion="{0}">{1}</result>'.format(api_version, body)
 
+  def build_url(self, path):
+    return 'http://rundeck.host/api/11/{0}'.format(path)
+
+  def build_project_url(self, project_name, path):
+    return self.build_url('project/{0}/{1}'.format(project_name, path))
+
+  @responses.activate
+  def test_list_projects(self):
+    project_description = 'the description'
+    project_url = 'the url'
+    project_name = 'the name'
+    responses.add(responses.GET,
+                  self.build_url('projects'),
+                  body=self.rundeck_success('<projects count="1">'
+                                            + '<project><name>{0}</name>'.format(project_name)
+                                            + '<description>{0}</description>'.format(
+                    project_description)
+                                            + '<url>{0}</url></project>'.format(project_url)
+                                            + '</projects>'),
+                  content_type='text/xml', status=200)
+
+    projects = self.rundeck_api.list_projects()
+
+    self.assertEquals(len(projects), 1)
+
+    self.assertEquals(projects[0]['name'], project_name)
+    self.assertEquals(projects[0]['description'], project_description)
+    self.assertEquals(projects[0]['url'], project_url)
+
+  @responses.activate
+  def test_list_jobs(self):
+    project_name = 'test_project'
+    jobs = [
+      {'name': 'job 1', 'id': '1', 'project': project_name, 'description': 'job 1 description'}]
+
+    doc, tag, text = Doc().tagtext()
+
+    with tag('jobs', count=len(jobs)):
+      for job in jobs:
+        with tag('job'):
+          with tag('name'):
+            text(job['name'])
+          with tag('project'):
+            text(job['project'])
+          with tag('description'):
+            text(job['description'])
+
+    responses.add(responses.GET,
+                  'http://rundeck.host/api/11/jobs?project=test_project',
+                  match_querystring=True,
+                  body=self.rundeck_success(doc.getvalue()),
+                  content_type='text/xml', status=200)
+
+    project_jobs = self.rundeck_api.list_jobs(project_name)
+
+    self.assertEquals(len(project_jobs), len(jobs))
+    self.assertEquals(project_jobs[0]['name'], jobs[0]['name'])
+
+
   @responses.activate
   def test_import_project_archive(self):
     project_name = 'test_project'
-    path_url = 'http://rundeck.host/api/11/project/{0}/import'.format(project_name)
+    path_url = self.build_project_url(project_name, 'import')
 
     responses.add(responses.PUT,
                   path_url,
@@ -68,7 +128,7 @@ class TestRundeckApi(unittest.TestCase):
 
   @responses.activate
   def test_import_job(self):
-    responses.add(responses.POST, 'http://rundeck.host/api/11/jobs/import',
+    responses.add(responses.POST, self.build_url('jobs/import'),
                   body=self.rundeck_success(
                     '<succeeded count="1"><job index="1"><id>some-id</id></job></succeeded>'),
                   content_type='text/xml', status=200)

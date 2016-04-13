@@ -5,3 +5,4 @@ HTTPretty
 sure
 ipython
 responses
+yattag
