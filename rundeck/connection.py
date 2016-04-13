@@ -3,7 +3,7 @@
 
 :license: Apache License, Version 2.0
 :author: Mark LaPerriere
-:contact: rundeckrun@mindmind.com
+:contact: otupman@antillion.com
 :copyright: Mark LaPerriere 2015
 
 :requires: requests
@@ -15,9 +15,9 @@ import xml.dom.minidom as xml_dom
 
 import requests
 
-from .transforms import ElementTree
-from .defaults import RUNDECK_API_VERSION
-from .exceptions import InvalidAuthentication, RundeckServerError, ApiVersionNotSupported
+from transforms import ElementTree
+from defaults import RUNDECK_API_VERSION
+from rd_exceptions import InvalidAuthentication, RundeckServerError, ApiVersionNotSupported
 
 
 def memoize(obj):
@@ -67,6 +67,15 @@ class RundeckResponse(object):
     @property
     @memoize
     def success(self):
+        """ Determines whether Rundeck executed the API command successfully.
+
+        This is separate as to whether the HTTP call successfully executed.
+
+        This essentially depends on Rundeck including the attribute `success="true"`
+        in the returned XML body.
+
+        :return: bool
+        """
         try:
             return 'success' in self.etree.attrib
         except Exception:

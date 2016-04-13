@@ -1,9 +1,9 @@
-.. RundeckRun documentation master file, created by
+.. arundeckrun documentation master file, created by
    sphinx-quickstart on Wed Dec  4 10:45:34 2013.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-RundeckRun
+arundeckrun
 ==========
 
 [Version |version|]
@@ -13,9 +13,9 @@ API. It uses the awesome `requests <http://docs.python-requests.org/>`_
 library.
 
 **READ FIRST**
-    If you're new to RundeckRun and are interacting with newer versions of Rundeck (>=2.1.3),
+    If you're new to arundeckrun and are interacting with newer versions of Rundeck (>=2.1.3),
     you should consider using the `command line tools included with Rundeck
-    <http://rundeck.org/docs/man1/index.html>`_ (since at least Rundeck version 2.0.4). RundeckRun
+    <http://rundeck.org/docs/man1/index.html>`_ (since at least Rundeck version 2.0.4). arundeckrun
     should work well for the Rundeck API up to version 11 (Rundeck <=2.1.3). It currently does not
     support Rundeck API versions greater than 11 for no other reason the project maintainer not
     having enough time to put into making the necessary changes. Pull requests welcome!
@@ -27,7 +27,7 @@ Installation
 
 .. code-block:: bash
 
-    $ pip install rundeckrun
+    $ pip install arundeckrun
 
 
 Basic Example
@@ -72,15 +72,15 @@ Execute a Job
 
 .. code-block:: pycon
 
-    >>> rd.job_run('HelloWorld', 'TestProject', argString={'from':'rundeckrun'})
-    {'argstring': '-from rundeckrun',
+    >>> rd.job_run('HelloWorld', 'TestProject', argString={'from':'arundeckrun'})
+    {'argstring': '-from arundeckrun',
      'date-started': datetime.datetime(2013, 7, 11, 18, 4, 24),
      'description': 'Plugin[localexec, nodeStep: true]',
      'href': 'http://rundeck.server.com/execution/follow/123',
      'id': '123',
      'job': None,
      'status': 'running',
-     'user': 'rundeckrun'}
+     'user': 'arundeckrun'}
 
 
 User Guide

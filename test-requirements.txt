@@ -1,0 +1,8 @@
+testtools
+mock
+httmock
+HTTPretty
+sure
+ipython
+responses
+yattag

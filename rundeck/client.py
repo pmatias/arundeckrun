@@ -3,7 +3,7 @@
 
 :license: Apache License, Version 2.0
 :author: Mark LaPerriere
-:contact: rundeckrun@mindmind.com
+:contact: otupman@antillion.com
 :copyright: Mark LaPerriere 2015
 """
 __docformat__ = "restructuredtext en"
@@ -18,11 +18,11 @@ except ImportError:
     # python 3
     maketrans = str.maketrans
 
-from .api import RundeckApiTolerant, RundeckApi, RundeckNode
-from .connection import RundeckConnection, RundeckResponse
-from .transforms import transform
-from .util import child2dict, attr2dict, cull_kwargs, StringType
-from .exceptions import (
+from api import RundeckApiTolerant, RundeckApi, RundeckNode
+from connection import RundeckConnection, RundeckResponse
+from transforms import transform
+from util import child2dict, attr2dict, cull_kwargs, StringType
+from rd_exceptions import (
     RundeckServerError,
     JobNotFound,
     MissingProjectArgument,
@@ -31,7 +31,7 @@ from .exceptions import (
     InvalidJobDefinitionFormat,
     InvalidResourceSpecification,
     )
-from .defaults import (
+from defaults import (
     GET,
     POST,
     DELETE,
@@ -239,6 +239,43 @@ class Rundeck(object):
                 how many seconds to wait for a completed status (default: 60)
             interval : int | float
                 how many seconds to sleep between polling cycles (default: 3)
+            argString : str | dict
+                argument string to pass to job - if str, will be passed as-is
+                else if dict will be converted to compatible string
+            loglevel : str('DEBUG', 'VERBOSE', 'INFO', 'WARN', 'ERROR')
+                logging level (default: 'INFO')
+            asUser : str
+                user to run the job as
+            exclude-precedence : bool
+                set the exclusion precedence (default True)
+            hostname : str
+                hostname inclusion filter
+            tags : str
+                tags inclusion filter
+            os-name : str
+                os-name inclusion filter
+            os-family : str
+                os-family inclusion filter
+            os-arch : str
+                os-arch inclusion filter
+            os-version : str
+                os-version inclusion filter
+            name : str
+                name inclusion filter
+            exlude-hostname : str
+                hostname exclusion filter
+            exlude-tags : str
+                tags exclusion filter
+            exlude-os-name : str
+                os-name exclusion filter
+            exlude-os-family : str
+                os-family exclusion filter
+            exlude-os-arch : str
+                os-arch exclusion filter
+            exlude-os-version : str
+                os-version exclusion filter
+            exlude-name : str
+                name exclusion filter
 
         :return: Details about the Job Execution
         :rtype: dict
