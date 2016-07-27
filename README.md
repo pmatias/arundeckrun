@@ -8,19 +8,21 @@
 A fork of the client library written in Python to interact with the Rundeck API, the majority of
 which was created by Mark LaPerriere.
 
-The fork exists mostly because the environment Antillion use it requires it to be hosted on
+The fork exists mostly because the environment Antillion uses it in requires it to be hosted on
 pypi, so updates must be pushed quickly. In addition, the requirement to run tests against a live
 Rundeck is a no-no.
 
-Rundeck (API) version compatibility:
+# Rundeck (API) version compatibility:
 
-Some calls are under active use/development, primarily:
+*Some* calls are under active use/development, primarily:
 
  - Job imports: API v1+
  - Project archive imports: API v14+
 
 All other calls _should_ work correctly as long as they are not deprecated or if Rundeck fail to
 correctly implement backwards compatibility.
+
+# Python version
 
 Target python version: 2.7
 Should work (but not tested aagainst): 3
