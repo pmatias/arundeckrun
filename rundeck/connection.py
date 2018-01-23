@@ -15,9 +15,9 @@ import xml.dom.minidom as xml_dom
 
 import requests
 
-from transforms import ElementTree
-from defaults import RUNDECK_API_VERSION
-from rd_exceptions import InvalidAuthentication, RundeckServerError, ApiVersionNotSupported
+from .transforms import ElementTree
+from .defaults import RUNDECK_API_VERSION
+from .rd_exceptions import InvalidAuthentication, RundeckServerError, ApiVersionNotSupported
 
 
 def memoize(obj):

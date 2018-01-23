@@ -20,7 +20,7 @@ try:
 except ImportError:
     import xml.etree.ElementTree as ElementTree
 
-from util import child2dict, attr2dict, node2dict
+from .util import child2dict, attr2dict, node2dict
 
 _DATETIME_ISOFORMAT = '%Y-%m-%dT%H:%M:%SZ'
 

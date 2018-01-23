@@ -18,11 +18,11 @@ except ImportError:
     # python 3
     maketrans = str.maketrans
 
-from api import RundeckApiTolerant, RundeckApi, RundeckNode
-from connection import RundeckConnection, RundeckResponse
-from transforms import transform
-from util import child2dict, attr2dict, cull_kwargs, StringType
-from rd_exceptions import (
+from .api import RundeckApiTolerant, RundeckApi, RundeckNode
+from .connection import RundeckConnection, RundeckResponse
+from .transforms import transform
+from .util import child2dict, attr2dict, cull_kwargs, StringType
+from .rd_exceptions import (
     RundeckServerError,
     JobNotFound,
     MissingProjectArgument,
@@ -31,7 +31,7 @@ from rd_exceptions import (
     InvalidJobDefinitionFormat,
     InvalidResourceSpecification,
     )
-from defaults import (
+from .defaults import (
     GET,
     POST,
     DELETE,

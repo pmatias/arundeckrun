@@ -16,16 +16,16 @@ except ImportError:
     # python 3
     from urllib.parse import quote as urlquote
 
-from connection import RundeckConnectionTolerant, RundeckConnection
-from util import cull_kwargs, dict2argstring, StringType
-from rd_exceptions import (
+from .connection import RundeckConnectionTolerant, RundeckConnection
+from .util import cull_kwargs, dict2argstring, StringType
+from .rd_exceptions import (
     InvalidResponseFormat,
     InvalidJobDefinitionFormat,
     InvalidDupeOption,
     InvalidUuidOption,
     HTTPError
     )
-from defaults import (
+from .defaults import (
     GET,
     POST,
     PUT,
