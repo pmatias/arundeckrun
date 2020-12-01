@@ -50,7 +50,7 @@ ExecutionOutputFormat = enum(
     **dict(zip(JobDefFormat.keys, JobDefFormat.values))
     )
 
-RUNDECK_API_VERSION = 11
+RUNDECK_API_VERSION = 14
 GET = 'get'
 PUT = 'put'
 POST = 'post'

@@ -39,7 +39,7 @@ port = os.environ.get(_RUNDECK_PORT_VAR, 4440)
 protocol = os.environ.get(_RUNDECK_PROTOCOL_VAR, 'http')
 usr = os.environ.get(_RUNDECK_USR_VAR, None)
 pwd = os.environ.get(_RUNDECK_PWD_VAR, None)
-api_version = os.environ.get(_RUNDECK_API_VERSION_VAR, 11)
+api_version = os.environ.get(_RUNDECK_API_VERSION_VAR, 14)
 
 test_job_id = uuid.uuid4()
 test_job_name = 'TestJobTest'
